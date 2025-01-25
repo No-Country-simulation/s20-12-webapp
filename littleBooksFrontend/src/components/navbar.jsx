@@ -25,7 +25,7 @@ const Navbar = () => {
   }
 
   try {
-    const response = await fetch(`https://pequenos-libros-publico.onrender.com/books/by-title-or-author/${searchTerm}`);
+    const response = await fetch(`https://s20-12-webapp.onrender.com/books/by-title-or-author/${searchTerm}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -42,7 +42,7 @@ const handleSearchByGenre = async (genre) => {
   setSearchTerm("");  
 
   try {
-    const response = await fetch(`https://pequenos-libros-publico.onrender.com/books/by-genre/${genre}`);
+    const response = await fetch(`https://s20-12-webapp.onrender.com/books/by-genre/${genre}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
