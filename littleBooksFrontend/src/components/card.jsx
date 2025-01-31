@@ -24,7 +24,7 @@ const Card = ({ imageUrl, title, author, stock, description }) => {
         <p className="card-author">Autor: {author}</p>
         <p className="card-stock">Stock: {stock}</p>
         <p className="card-description">{description}</p>
-        <button type='button' onClick={() => addItem(bookItem)} className="card-button">Agregar</button>
+        <button type='button' onClick={() => addItem(bookItem)} className="card-button">Agregar al carrito</button>
       </div>
     </div>
   );

@@ -7,6 +7,46 @@
     color:var(--luz_1);
 }
 
+/*estilos para el componente header*/
+.header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .title {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    color: var(--fondo_1);
+    font-size: 5rem;
+    text-shadow: 2px 2px 4px var(--luz_1);
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .under_title {
+    position: absolute;
+    top: 65%;
+    left: 25%;
+    color: var(--fondo_1);
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px var(--luz_1);
+    font-weight: bold;
+    text-align: center;
+  }
+
 .container {
     display: flex; 
     justify-content: space-between; 
@@ -14,7 +54,7 @@
     text-align: center;
     font-size: x-large;
     font-weight: bold;
-    padding: 20px;
+    padding: 10px; 
     flex-wrap: wrap; 
 }
 /*estilo de lista dinamica */
@@ -126,34 +166,57 @@ button a:hover {
 }
 
 .img-carrito {
-    width: 150px;
+    width: 120px;
     margin: 10px; 
+    align-content: center;
 }
 
 .container h2 {
     margin-top: 15px;
     text-decoration: underline 1px solid;
+    font-size: clamp(1.8rem, calc(7vw + 1), 2rem);
 }
 
-/* Media query para pantallas más pequeñas */
+/* pantallas pequeñas */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        gap: 20px;
+    .title {
+      position: absolute;
+      top: 45%;
+      left: 7%;
+      font-size: 4.5rem;
+    }
+    
+    .under_title {
+      position: absolute;
+      top: 65%;
+      left: 7%;
+      font-size: 3.5rem;
+    }
+
+    .container{
+        justify-content: center;
     }
 
     .list-item-cart {
-        width: 90%; 
-        margin: 10px 0; 
+        width: 70%; 
+        margin: auto; 
     }
 
-    input,
-    button {
-        width: 100%; 
+    .btn-compra{
+        width: 50%;
+    }
+
+    .form-conteiner {
+        position: relative;
+        align-items: center;
+        margin: auto;
+        width: 100%;    
+    }
+
+    input, button {
+        width: 90%; 
         max-width: none; 
     }
 
-    .img-carrito {
-        width: 120px;
-    }
-}
+    
+  }

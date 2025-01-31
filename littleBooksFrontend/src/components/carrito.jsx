@@ -105,14 +105,14 @@ const Carrito = () => {
             cart.map((item, index) => (
               <div key={index} className="list-item-cart">
                 <h4>{item.title}</h4>
-                <button className="btn" type="button" onClick={() => handleSubstracBook(index)}>-</button>
+                <button className="btn" type="button" onClick={() => handleSubstracBook(index)} aria-live={`Restar una unidad de ${item.title}`}>-</button>
                 <h5 className="cantidad">{item.cantidad}</h5>
-                <button className="btn" type="button" onClick={() => handleAddBook(index)}>+</button>
+                <button className="btn" type="button" onClick={() => handleAddBook(index)} aria-live={`Agregar una unidad de ${item.title}`}>+</button>
               </div>
             ))
           )}
         </div>
-        <button type="button">
+        <button className="btn-compra" type="button">
           <Link to="/">Seguir comprando</Link>
         </button>
       </div>
