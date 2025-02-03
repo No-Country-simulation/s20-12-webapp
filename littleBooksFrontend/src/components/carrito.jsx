@@ -9,7 +9,6 @@ const Carrito = () => {
     nombre: '',
     apellido: '',
     email: '',
-    direccion: '',
   });
 
   const handleChange = (e) => {
@@ -39,7 +38,7 @@ const Carrito = () => {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
           
-          window.confirm("Su pedido ha sido realizado con éxito, muchas gracias por su compra");
+          window.confirm("Su pedido ha sido realizado con éxito, muchas gracias. \n En breve recibira un email de la tienda.");
           
           localStorage.removeItem('cart');
           setCart([]);
@@ -127,9 +126,6 @@ const Carrito = () => {
 
           <label htmlFor="email"> Email </label>
           <input type="email" name="email" required value={formData.email} onChange={handleChange} />
-
-          <label htmlFor="direccion"> Direccion </label>
-          <input type="text" name="direccion" required value={formData.direccion} onChange={handleChange} />
 
           <button type="submit">Confirmar pedido</button>
         </form>

@@ -16,9 +16,7 @@ const DinamicCards= () => {
             key={index}
             imageUrl={result.imageUrl} 
             title={result.title}
-            year={result.year}
-            authors={result.authors} 
-            stock={result.stock} 
+            authors={result.authors}
             description={result.description}
           />
           ))}
