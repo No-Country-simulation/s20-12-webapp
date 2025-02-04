@@ -23,7 +23,7 @@ const Carrito = () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     try {
-        const response = await fetch("/endpoint/pedidos", {
+        const response = await fetch("https://pequenos-libros-publico.onrender.com/shopingcart/sendcart", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

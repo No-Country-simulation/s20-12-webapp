@@ -1,9 +1,9 @@
 import React from 'react';
 
 //base de la card, donde se mostraran los distintos libros
-const Card = ({ imageUrl, title, authors, description }) => {
+const Card = ({ imageUrl, title, authors, description, id }) => {
 
-  const bookItem = { title, authors};
+  const bookItem = { id, title};
 
   //se agrega el libro a la base de datos
   const addItem = (item) => {
@@ -23,6 +23,7 @@ const Card = ({ imageUrl, title, authors, description }) => {
         <h3 className="card-title">{title}</h3>
         <p className="card-author">Autor: {authors[0].value}</p>
         <p className="card-description">{description}</p>
+        <p className="card-id">{id}</p>
         <button type='button' onClick={() => addItem(bookItem)} className="card-button">Agregar al carrito</button>
       </div>
     </div>

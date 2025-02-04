@@ -18,6 +18,7 @@ const DinamicCards= () => {
             title={result.title}
             authors={result.authors}
             description={result.description}
+            id={result.id}
           />
           ))}
         </div>
