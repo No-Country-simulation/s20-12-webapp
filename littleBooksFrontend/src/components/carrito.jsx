@@ -16,50 +16,54 @@ const Carrito = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  //envio de pedidos a la base de datos
+  // Envio de pedidos a la base de datos
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    const transformedCart = cart.map(item => ({
+      id: item.id,
+      title: item.title,
+      cant: item.cantidad, 
+    }));
+
     try {
-        const response = await fetch("https://pequenos-libros-publico.onrender.com/shopingcart/sendcart", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            formData,
-            cart
-          }),
-        });
-        console.log("datos enviados:", formData, cart);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          
-          window.confirm("Su pedido ha sido realizado con éxito, muchas gracias. \n En breve recibira un email de la tienda.");
-          
-          localStorage.removeItem('cart');
-          setCart([]);
-  
-      } catch (error) {
-          console.error("Error fetching data:", error);
+      const response = await fetch("https://pequenos-libros-publico.onrender.com/ShoppingCart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nombre: `${formData.nombre} ${formData.apellido}`,
+          email: formData.email,
+          books: transformedCart,
+        }),
+      });
+      console.log("datos enviados:", formData, transformedCart);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    };
+      window.confirm("Su pedido ha sido realizado con éxito, muchas gracias. \n En breve recibirá un email de la tienda.");
+      localStorage.removeItem('cart');
+      setCart([]);
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
     const updatedCart = storedCart.map(item => ({
-        ...item,
-        cantidad: item.cantidad || 1
-      }));
-      
-      setCart(updatedCart);
-    }, []);
+      ...item,
+      cantidad: item.cantidad || 1,
+    }));
+    
+    setCart(updatedCart);
+  }, []);
 
   // Función para actualizar la cantidad de un producto específico
   const updateQuantity = (index, newQuantity) => {
