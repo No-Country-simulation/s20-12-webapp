@@ -29,7 +29,7 @@ const Carrito = () => {
     }));
 
     try {
-      const response = await fetch("https://pequenos-libros-publico.onrender.com/ShoppingCart", {
+      const response = await fetch("https://s20-12-webapp.onrender.com/ShoppingCart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
