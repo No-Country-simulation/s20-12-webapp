@@ -4,16 +4,17 @@ Una plataforma en línea donde encontraras todos tus libros favoritos de manera 
 
 ### ✨ Características principales:
 
-- Búsqueda avanzada por título, autor o género. 🔎
-- Carrito de compras diseñado para una compra segura y confiable de forma online. 💵
+- Búsqueda más rapida por título, autor o género. 🔎
+- Agregar ✅ o quitar ❌ unidades de forma sencilla en cada pedido.
+- Mapa con indicación precisa para ir al lugar de forma presencial. 🗺️
 
 ## Minimum Viable Product (MVP).
 
 - #### Home y Landing Page:
 La página principal de Pequeños libros es la muestra de todos los libros que tenemos para que pueda realizar el pedido de forma online. La Landing Page ofrece una visión general del contenido disponible, invitando a los usuarios a explorar categorias, descrubrir nuestra ubicación si desea asesorarse de forma presencial y contacto para sacarse cualquier duda.
 
-- #### Carrito de compras:
-En el carrito de compras podra ver los libros seleccionados para comprar en el cual podra aumentar o disminuir la cantidad de unidades de un mismo producto, como asi eliminar alguno si asi lo desea y tambien podra visualizar el total a pagar antes de realizar el pago.
+- #### Carrito de pedidos:
+En el carrito de pedidos podra ver los libros seleccionados, en el cual podrá aumentar o disminuir la cantidad de unidades de un mismo producto, como así eliminar alguno si asi lo desea.
 
 ## Tecnologias 💻
 
